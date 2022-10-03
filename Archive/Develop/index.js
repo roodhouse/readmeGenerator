@@ -50,15 +50,13 @@ const questions = inquirer.prompt([
         type: 'list',
         name: 'license',
         message: 'Please select a license',
-        choices: ['MIT', 'TEST'],
+        choices: ['MIT License', 'Mozilla Public License 2.0', 'Creative Commons Zero v1.0 Universal', 'The Unlicense'],
     },
 ]).then((answers) => writeFile('README.md', generateMarkdown(answers))
   .then(() => console.log('File was created'))
+  .then(() => console.log(answers))
   .catch((err) => console.log(err))
 );
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {}
